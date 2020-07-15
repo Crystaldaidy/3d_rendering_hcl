@@ -222,7 +222,6 @@ def rendering(triangle_3ds,angle):
         hcl.mutate((size_pixels[0],), lambda x: coloringFB(x,pixels,frame_buffer),"buffer_update")
         
     hcl.mutate((num_3d_triangles,), lambda m: loop_body(m),"main_body")
-#    out = hcl.compute(frame_buffer.shape,lambda x,y:frame_buffer[x][y],name="out")
     
     return frame_buffer
 
@@ -255,7 +254,6 @@ target.config(compile="vivado_hls", mode="csim|csyn")
 f = hcl.build(s,target=target)
 
 _triangle_3ds = hcl.asarray(np.array(input_data),dtype=hcl.Int())
-#_angle = 0
 _angle = hcl.asarray(np.array([0]),dtype=hcl.Int())
 _frame_buffer = hcl.asarray(np.zeros([MAX_X,MAX_Y]),dtype=hcl.Int())
 
