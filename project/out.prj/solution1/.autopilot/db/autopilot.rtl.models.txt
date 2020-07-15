@@ -1,0 +1,9 @@
+test_frame_buffer_V
+test_triangle_3ds_V
+test_z_buffer_V
+test_fragment_0_V
+test_fragment_3_V
+test_pixels_2_V
+test_control_s_axi
+regslice_core
+test
